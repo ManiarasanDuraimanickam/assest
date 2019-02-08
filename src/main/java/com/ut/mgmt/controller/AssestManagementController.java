@@ -40,6 +40,7 @@ public class AssestManagementController {
 			@RequestParam("password") String password, @ModelAttribute AssestMgmtVO assestMgmtVO) {
 		ProjectGlobal.LOG.info("User submitted Login Form");
 		UserInfo authResp = assestManagementService.doAuthenticate(username, password);
+		assestMgmtVO.setUserInfo(authResp);
 		if (null != authResp) {
 			assestMgmtVO.addNewLink("dashboard");
 			return new ModelAndView("dashboard");
@@ -51,6 +52,13 @@ public class AssestManagementController {
 	public ModelAndView doLogout(HttpSession sess) {
 		sess.invalidate();
 		return new ModelAndView("login");
+	}
+
+	@GetMapping("/navigation")
+	public ModelAndView doNavigation(@ModelAttribute("assestMgmtVO") AssestMgmtVO assestMgmtVO,
+			@RequestParam("menu") String navigationTo) {
+		assestMgmtVO.addNewLink(navigationTo);
+		return new ModelAndView(navigationTo);
 	}
 
 }

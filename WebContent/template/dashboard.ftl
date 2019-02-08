@@ -100,7 +100,7 @@
                 </li>-->
                 <!-- logged in user profiles and other stuffs here-->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> ${assestMgmtVO.userInfo} ${(assestMgmtVO.userInfo.userName)!"User"} <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> ${(assestMgmtVO.userInfo.userName)!"User"} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -158,7 +158,42 @@
                 <!-- /.row -->
 
                 <div class="row">
-               
+                Welcome to the DashBoard Page, Your dash is being prepared...!
+                 <#--<#list PSIDatavo.stockDetails?sort_by("millname") as stockdetail>
+	                 <#list stockdetail.paperDetail?sort_by("stock") as paperdetail>
+	                 	<div class="col-lg-4 col-md-6">
+                     		<div class="panel <#if (paperdetail.stock?eval gt 130)>panel-green<#elseif (paperdetail.stock?eval gt 100 )>panel-primary<#elseif (paperdetail.stock?eval gt 50 )>panel-yellow<#elseif (paperdetail.stock?eval < 50 )> panel-red</#if>">
+	                            <div class="panel-heading">
+	                                <div class="row">
+	                                    <div class="col-lg-6 col-md-6 col-xs-4">
+	                                        <i class="fa fa-comments fa-2x"></i>
+	                                        
+											<div>
+												<ul style="padding-left: 1em;margin: 0;">
+												<li>${paperdetail.grade!}</li>
+				                                    <li>${paperdetail.gsm!}GSM</li>
+				                                    
+				                                    <li>${paperdetail.size!}</li>
+		                                    	</ul>
+											</div>
+	                                    </div>
+	                                    
+	                                    <div class="col-lg-6 col-md-6 col-xs-8 text-right">
+	                                        <div class="medium">${paperdetail.stock!}<small>kg</small></div>
+	                                        <div>${stockdetail.millname!}</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                           
+	                                <div class="panel-footer">
+	                                   
+	                                    <div class="clearfix"></div>
+	                                </div>
+	                           
+		                      </div>
+		                  </div>
+	                 </#list>
+                 </#list>-->
                 </div>
                    <!-- <div class="col-lg-3 col-md-6">
                         <div class="panel panel-green">
